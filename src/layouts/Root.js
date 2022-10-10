@@ -4,17 +4,21 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 
-const Main = () => {
+const Root = () => {
   return (
     <div>
       <Header></Header>
       <div className="flex">
-        <NavBar></NavBar>
-        <Outlet></Outlet>
+        <div className="w-2/12">
+          <NavBar></NavBar>
+        </div>
+        <div className="w-10/12">
+          <Outlet></Outlet>
+        </div>
       </div>
       <Footer></Footer>
     </div>
   );
 };
 
-export default Main;
+export default Root;

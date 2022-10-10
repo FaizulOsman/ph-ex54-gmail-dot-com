@@ -23,7 +23,7 @@ const NavBar = () => {
     console.log(isTrue);
   };
   return (
-    <div className="flex flex-col w-2/12">
+    <div className="flex flex-col sticky top-16">
       <button className="btn btn-info bg-opacity-40 m-3 w-7/12">
         <FontAwesomeIcon className="mr-3" icon={faPen}></FontAwesomeIcon>
         Compose

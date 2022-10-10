@@ -1,6 +1,6 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Main from "./layouts/Main";
+import Root from "./layouts/Root";
 import Inbox from "./components/Inbox";
 import ErrorMessage from "./layouts/ErrorMessage";
 import Starred from "./components/Starred";
@@ -16,12 +16,13 @@ import Charts from "./components/Charts";
 import Spam from "./components/Spam";
 import Trash from "./components/Trash";
 import Categories from "./components/Categories";
+import MessageDetails from "./components/MessageDetails";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Main></Main>,
+      element: <Root></Root>,
       errorElement: <ErrorMessage></ErrorMessage>,
       children: [
         {
@@ -34,6 +35,14 @@ function App() {
               loader: () =>
                 fetch(`https://jsonplaceholder.typicode.com/comments`),
               element: <Primary></Primary>,
+            },
+            {
+              path: "/inbox/message/:messageId",
+              loader: ({ params }) =>
+                fetch(
+                  `https://jsonplaceholder.typicode.com/comments/${params.messageId}`
+                ),
+              element: <MessageDetails></MessageDetails>,
             },
             { path: "/inbox/promotions", element: <Promotions></Promotions> },
             { path: "/inbox/social", element: <Social></Social> },

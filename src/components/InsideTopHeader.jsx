@@ -8,9 +8,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const InboxTopHeader = () => {
+const InsideTopHeader = () => {
   return (
-    <div className="w-11/12 mx-auto bg-white p-4  rounded-md">
+    <div className="w-11/12 mx-auto bg-white p-4 sticky top-16 rounded-md">
       <div className="flex justify-between items-center ">
         <div className="flex items-center gap-6">
           <input type="checkbox" checked className="checkbox checkbox-sm" />
@@ -28,4 +28,4 @@ const InboxTopHeader = () => {
   );
 };
 
-export default InboxTopHeader;
+export default InsideTopHeader;

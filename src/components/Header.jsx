@@ -35,7 +35,7 @@ const Header = () => {
             <img src="./logo.png" alt="logo" />
           </Link>
           <div>
-            <div className="form-control  ml-12">
+            <div className="form-control  ml-[74px]">
               <label className="input-group">
                 <span className="bg-sky-100">
                   <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
